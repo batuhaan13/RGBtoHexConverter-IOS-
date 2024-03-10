@@ -27,11 +27,10 @@ class ViewController: UIViewController {
     
     @IBAction func btnConvert(_ sender: Any) {
         if secilenIndex == 0 {
-            //RGB'den HEX'e çevirme işlemi yapılacaktır.
             convertRGBtoHEX()
             
         } else {
-            //HEX'ten RGB çevirme işlemi yapılacaktır.
+            // HEX to RGB
             convertHEXtoRGB()
         }
         
@@ -64,7 +63,6 @@ class ViewController: UIViewController {
         
         
         
-        //buraya kadar gelinirse kullanıcı değerleri düzgün bir şekilde girmiştir.
         
         let redHex = String(format: "%2X", redValue)
         let greenHex = String(format: "%2X", greenValue)
@@ -79,7 +77,6 @@ class ViewController: UIViewController {
         guard let greenValue = UInt8(greenText.text!, radix: 16) else {return}
         guard let blueValue = UInt8(blueText.text!, radix: 16) else {return}
         
-        //print("RED :\(redValue) \n GREEN : \(greenValue) \n BLUE : \(blueValue)")
         firstLabel.text = "RED : \(redValue) \n GREEN : \(greenValue) \n BLUE : \(blueValue)"
         resultLabel.backgroundColor = UIColor(red: CGFloat(redValue)/255, green: CGFloat(greenValue)/255, blue: CGFloat(blueValue)/255, alpha: 1)
     }
